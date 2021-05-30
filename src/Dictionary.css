@@ -6,3 +6,18 @@
   font-size: 60px;
   font-weight: bold;
 }
+
+.Dictionary .search-engine {
+  width: max-content;
+  /* display: block;
+  margin: 0 auto; */
+}
+
+.Dictionary form {
+  display: block;
+  margin: 0 auto;
+}
+
+.Dictionary button {
+  text-align: left;
+}
