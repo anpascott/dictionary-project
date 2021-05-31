@@ -9,8 +9,8 @@
 
 .Dictionary .search-engine {
   width: max-content;
-  /* display: block;
-  margin: 0 auto; */
+  padding: 10px;
+  margin: 15px;
 }
 
 .Dictionary form {
@@ -20,4 +20,8 @@
 
 .Dictionary button {
   text-align: left;
+}
+
+.Dictionary ul {
+  list-style: none;
 }

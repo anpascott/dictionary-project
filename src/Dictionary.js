@@ -23,21 +23,32 @@ let [results, setResults] = useState(null);
   }
     return (
      <div className="Dictionary">
-<h1 className="title">
-Dictionary
-  </h1>
-< div className="search-engine">
-  <div className="row row-cols-lg-auto g-3 align-items-center">
-  <div className="col-md-9">
-  <form  onSubmit={search}>
-    <input type="Search" autoFocus={true} placeholder="Type a word" onChange={updateKeyword}/>
-  </form>
-  </div>
-    <div className="col-md-3">
-  <button type="button" className="btn btn-light" onClick={search}>Search</button>
-  </div>
-  </div>
-  </div>
+      <h1 className="title"> 
+      Dictionary 
+      </h1>
+      < div className="search-engine">
+          <form onSubmit={search}>
+          <div className="row">
+            <div className="col-auto">
+              <input
+                type="search"
+                placeholder="Enter a word..."
+                className="form-control"
+                autoFocus="on"
+                onChange={updateKeyword}
+              />
+            </div>
+            <div className="col-auto">
+              <input
+                type="submit"
+                value="Search"
+                className="btn btn-light w-200"
+              />
+              
+            </div>
+          </div>
+          </form>
+        </div>
  <Results results={results}/>
    </div>  
     );
