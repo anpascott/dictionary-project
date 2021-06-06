@@ -1,6 +1,7 @@
 .App {
   background-color: #f5d3bbec;
-  line-height: 3em;
+  opacity: 0.9;
+  line-height: 2em;
   max-width: 960px;
   margin: 0 auto;
 }

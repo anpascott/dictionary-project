@@ -1,23 +1,41 @@
 import React, { useState } from "react";
 import "./Dictionary.css";
 import axios from "axios";
-import Results from "./Results.js";
+import Results from "./Results.js"; 
+import Meaning from "./Meaning.js"; 
+import Images from "./Images.js";
 
 export default function Dictionary () {
 
-let [keyword, setKeyword] = useState("count");
+let [keyword, setKeyword] = useState("");
 let [results, setResults] = useState(null);
+let [meaning, setMeaning] = useState(null);
+let [images, setImages] = useState(null);
 
     function handleResponse (response){
       setResults(response.data[0]);
+      setMeaning(response.data[0].meanings);
+      handleImages();
+      console.log(response.data[0].meanings);
+    }
+
+ function handleImages(event) {   
+        const url = `https://api.pexels.com/v1/search?query=${keyword}&per_page=15`;  
+        const access_token = '563492ad6f9170000100000105bd6c37933d47cba37c5e53114eb48f';  
+        axios.get(url, {  
+            headers: {  
+                'Authorization': `${access_token}`  
+            }  
+        }).then(data => {  
+            console.log(data);  
+            setImages(data.data.photos);  
+        })
     }
 
   function search (event){
     event.preventDefault(); 
-
     let apiUrl=`https://api.dictionaryapi.dev/api/v2/entries/en_US/${keyword}`
     axios.get(apiUrl).then(handleResponse);
-
   }
 
   function updateKeyword (event) {
@@ -26,9 +44,8 @@ let [results, setResults] = useState(null);
     return (
      <div className="Dictionary">
       <h1 className="title display-2"> 
-      English Dictionary 
+      Dictionary 
       </h1>
-      <section>
       < div className="search-engine">
           <form onSubmit={search}>
           <div className="row">
@@ -46,14 +63,15 @@ let [results, setResults] = useState(null);
                 type="submit"
                 value="Search"
                 className="btn btn-light"
-              />
-              
+              />  
             </div>
+            <p> Examples: dog, flower, rainbow, cake...</p>
           </div>
           </form>
         </div>
-        </section>
  <Results results={results}/>
+ <Images images={images}/>
+ <Meaning meaning={meaning}/>
    </div>  
     );
 }

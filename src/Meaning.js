@@ -3,23 +3,36 @@ import Synonyms from "./Synonyms.js";
 import "./Meaning.css";
 
 export default function Meaning (props){
+
+  if (props.meaning) {
+
 return (
-  <div className="meaning">
-    <section>
-<span className="display-6"> <strong> {props.meaning.partOfSpeech} </strong> </span>
-{props.meaning.definitions.map(function( definition,index )
+  <div className="Meaning">
+    {props.meaning.map(function( meaning,index) 
+    {
+      return (
+        <section key={index}>
+          <span className="display-6"> 
+          <strong> {meaning.partOfSpeech} </strong> 
+          </span>
+{meaning.definitions.map(function( definition,index )
 {
 return (
         <ul key={index}>
          <li>{definition.definition}</li>
          <div className="example">{definition.example}</div>
-         <div className="synonyms"> <Synonyms synonyms={definition.synonyms} /> </div>
+         <Synonyms synonyms={definition.synonyms}/>
          </ul>
+         
           
 );
 })}
 </section>
-  </div>
 );
-
+    })}
+    </div>
+);
+  } else {
+    return null;
+  }
 }
