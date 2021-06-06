@@ -1,0 +1,8 @@
+.Meaning ul {
+  list-style: circle;
+}
+.example {
+  font-family: "Dancing Script", cursive;
+  font-size: 20px;
+  margin-left: 20px;
+}

@@ -1,7 +1,13 @@
 .App {
-  line-height: 1.5;
+  background-color: #f5d3bbec;
+  line-height: 3em;
 }
 .App footer {
-  margin: 20px;
+  text-align: center;
+  margin: 10px;
   font-size: 12px;
+}
+
+.App footer a {
+  color: #02475e;
 }

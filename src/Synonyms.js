@@ -1,19 +1,22 @@
 import React from "react";
+import "./Synonyms.css";
 
 export default function Synonyms (props) {
   if (props.synonyms) {
   return (
     <ul className="Synonyms">
+      <div className="row">
 {props.synonyms.map(function( synonym,index )
 {
 return (
-        <li key={index}>
-          <p>
+        <div className="col-auto" key={index}>
+          <li>
          {synonym}
-         </p>
-          </li>
+         </li>
+          </div>
 );
 })} 
+     </div>
     </ul>
   );
 } else {

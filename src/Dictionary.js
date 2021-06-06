@@ -23,17 +23,18 @@ let [results, setResults] = useState(null);
   }
     return (
      <div className="Dictionary">
-      <h1 className="title"> 
-      Dictionary 
+      <h1 className="title display-2"> 
+      English Dictionary 
       </h1>
+      <section>
       < div className="search-engine">
           <form onSubmit={search}>
           <div className="row">
             <div className="col-auto">
               <input
                 type="search"
-                placeholder="Enter a word..."
-                className="form-control"
+                placeholder="Enter a word to discover its meaning..."
+                className="search form-control"
                 autoFocus="on"
                 onChange={updateKeyword}
               />
@@ -42,13 +43,14 @@ let [results, setResults] = useState(null);
               <input
                 type="submit"
                 value="Search"
-                className="btn btn-light w-200"
+                className="btn btn-light"
               />
               
             </div>
           </div>
           </form>
         </div>
+        </section>
  <Results results={results}/>
    </div>  
     );

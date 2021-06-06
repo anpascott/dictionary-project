@@ -1,9 +1,10 @@
 .Dictionary .title {
+  font-family: "Dancing Script", cursive;
   margin-top: 35px;
+  margin-left: 35px;
   padding: 10px;
   text-align: left;
-  color: #e84545;
-  font-size: 60px;
+  color: #687980;
   font-weight: bold;
 }
 
@@ -18,10 +19,22 @@
   margin: 0 auto;
 }
 
-.Dictionary button {
-  text-align: left;
+.Dictionary .search {
+  width: 400px;
+  width: 400px;
+  margin: 5px;
+  padding: 6px 4px;
+  color: #333;
+  border: 1px solid #ddd;
 }
-
-.Dictionary ul {
-  list-style: none;
+.Dictionary .btn {
+  padding: 7px 30px;
+}
+.Dictionary section {
+  background-color: white;
+  padding: 30px 15px;
+  margin: 15px;
+  border: white;
+  border-radius: 6px;
+  box-shadow: 5px 7px 10px grey;
 }

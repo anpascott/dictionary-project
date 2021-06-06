@@ -1,0 +1,11 @@
+.Synonyms ul {
+  list-style: none;
+}
+.Synonyms li {
+  font-size: 16px;
+  font-style: italic;
+  margin-left: 20px;
+  margin-right: 55px;
+  color: #687980;
+  text-shadow: grey;
+}
