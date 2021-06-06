@@ -7,7 +7,6 @@ function App() {
       <div className="container">
         <Dictionary/>
 <footer className="repository">
-  <br/>
  < a href="https://github.com/anpascott/dictionary-project.git"> Open-source code</a> by Andrea P.
 </footer>
       </div>  
